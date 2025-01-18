@@ -7,7 +7,10 @@ int main(int argc, char **argv) {
     // x ?
 
     // double x = std::stod(argv[1]);
-    int x = std::stoi(argv[1]);
-    std::cout << x << " + " << x << " = " << x + x << std::endl;    
+    // int x = std::stoi(argv[1]);
+     //int x = std::stoi(argv[1]);
+    int x = 1;
+
+    std::cout << x << " + " << x << " = " << x + x << std::endl;     
     return 0;
 }
