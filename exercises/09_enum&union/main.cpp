@@ -37,6 +37,7 @@ ColorEnum convert_by_pun(Color c) {
 
     TypePun pun;
     // TODO: 补全类型双关转换
+    pun.c = c; // union它允许不同的数据类型共享同一块内存。
 
     return pun.e;
 }
