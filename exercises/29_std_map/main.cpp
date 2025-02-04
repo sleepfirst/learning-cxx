@@ -1,37 +1,18 @@
 ﻿#include "../exercise.h"
-#include <map>
+#include <string>
 
-// READ: `std::map` <https://zh.cppreference.com/w/cpp/container/map>
-// READ: `std::unordered_map` <https://zh.cppreference.com/w/cpp/container/unordered_map>
+// READ: 字符串 <https://zh.cppreference.com/w/cpp/string/basic_string>
 
-template<class k, class v>
-bool key_exists(std::map<k, v> const &map, k const &key) {
-    // TODO: 实现函数
-}
-
-template<class k, class v>
-void set(std::map<k, v> &map, k key, v value) {
-    // TODO: 实现函数
-}
-
-// ---- 不要修改以下代码 ----
 int main(int argc, char **argv) {
+    // READ: 字符串字面量 <https://zh.cppreference.com/w/cpp/string/basic_string/operator%22%22s>
     using namespace std::string_literals;
-
-    std::map<std::string, std::string> secrets;
-
-    set(secrets, "hello"s, "world"s);
-    ASSERT(key_exists(secrets, "hello"s), "\"hello\" shoud be in `secrets`");
-    ASSERT(!key_exists(secrets, "foo"s), "\"foo\" shoud not be in `secrets`");
-
-    set(secrets, "foo"s, "bar"s);
-    set(secrets, "Infini"s, "Tensor"s);
-    ASSERT(secrets["hello"] == "world", "hello -> world");
-    ASSERT(secrets["foo"] == "bar", "foo -> bar");
-    ASSERT(secrets["Infini"] == "Tensor", "Infini -> Tensor");
-
-    set(secrets, "hello"s, "developer"s);
-    ASSERT(secrets["hello"] == "developer", "hello -> developer");
-
+    auto hello = "Hello"s;
+    auto world = "world";
+    // READ: `decltype` 表达式 <https://zh.cppreference.com/w/cpp/language/decltype>
+    // READ: `std::is_same_v` 元编程判别 <https://zh.cppreference.com/w/cpp/types/is_same>
+    ASSERT((std::is_same_v<decltype(hello), std::string>), "Fill in the missing type.");
+    ASSERT((std::is_same_v<decltype(world), const char*>), "Fill in the missing type.");
+    // TODO: 将 `?` 替换为正确的字符串
+    ASSERT(hello + ", " + world + '!' == "Hello, world!", "Fill in the missing string.");
     return 0;
 }
